@@ -1,0 +1,25 @@
+[package]
+name = "agent-tools"
+version = "0.2.1"
+edition = "2024"
+description = "Shared git workflow for repos that coding agents work in: who owns which uncommitted files, commit-on-approval, one history timeline, commit-msg rules"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[[bin]]
+name = "work"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+clap = { version = "4", features = ["derive", "env"] }
+regex = "1"
+serde = { version = "1", features = ["derive"] }
+toml = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+
+[profile.release]
+strip = true

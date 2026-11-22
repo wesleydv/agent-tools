@@ -1,0 +1,12 @@
+# agent-tools' own config (format: README, Configuration)
+requires = "0.2.1"
+
+# A change to the tool is what projects run: say why.
+deploy_paths = ['^src/']
+
+# Refuse private names in this public repo (README, Denylist). The owner writes the list.
+denylist = "~/.config/agent-tools/denylist-public"
+
+[[systems]]
+match = '^(src|tests)/'
+systems = ["work"]

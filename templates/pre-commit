@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# The shared pre-commit check (agent-tools README, Denylist). Enable once per clone: git config core.hooksPath .githooks
+# A repo with checks of its own runs them here too, before or after this line.
+command -v work >/dev/null || { echo "BLOCKED: \`work\` not installed (agent-tools README, Install)" >&2; exit 1; }
+work hook pre-commit
